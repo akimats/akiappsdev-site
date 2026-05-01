@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkiAppsDev - Android アプリ開発</title>
+    <meta name="description" content="AkiAppsDev は Android 向け実用アプリを開発・公開している個人事業主です。診断・電卓・ライフログ・子育て支援など、日常を少し楽にするアプリを提供しています。">
+    <link rel="canonical" href="https://akiappsdev.com/">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        header h1 {
+            font-size: 2em;
+            color: var(--primary);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        header p {
+            color: var(--text-light);
+            font-size: 1em;
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 16px;
+            font-size: 0.9em;
+        }
+
+        .lang-switch a {
+            display: inline-block;
+            padding: 4px 12px;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        .lang-switch a:hover {
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.3em;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .app-card {
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        .app-card .app-name {
+            color: var(--primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .app-card .app-desc {
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th, .info-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            font-size: 0.95em;
+            vertical-align: top;
+        }
+
+        .info-table th {
+            color: var(--text-light);
+            font-weight: 600;
+            white-space: nowrap;
+            width: 32%;
+        }
+
+        .info-table tr:last-child th,
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            color: var(--text-light);
+            font-size: 0.85em;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <a href="/en/">English</a>
+        </div>
+
+        <header>
+            <h1>AkiAppsDev</h1>
+            <p>毎日をちょっと楽にする Android アプリを開発しています</p>
+        </header>
+
+        <section>
+            <h2>事業について</h2>
+            <p>AkiAppsDev は、個人事業主として Android 向けの実用アプリを開発・公開しています。診断・電卓・ライフログ・子育て支援・ヘルスケアなど、日常で「ちょっと欲しい」と思える機能をシンプルな UI でまとめることを大切にしています。</p>
+            <p>すべてのアプリは Kotlin と Jetpack Compose で実装し、Material 3 のデザインガイドラインに沿った使いやすさと、最新の Android プライバシー要件への準拠を両立しています。</p>
+        </section>
+
+        <section>
+            <h2>公開アプリ</h2>
+            <div class="apps-grid">
+                <div class="app-card"><span class="app-name">どうぶつ性格診断</span><span class="app-desc">12問の性格診断</span></div>
+                <div class="app-card"><span class="app-name">スマート電卓</span><span class="app-desc">読み上げ対応の実用電卓</span></div>
+                <div class="app-card"><span class="app-name">エゴグラム診断</span><span class="app-desc">交流分析ベースの自己理解</span></div>
+                <div class="app-card"><span class="app-name">おやすみサウンド</span><span class="app-desc">睡眠導入の環境音アプリ</span></div>
+                <div class="app-card"><span class="app-name">筋トレログ</span><span class="app-desc">トレーニング記録 + CSV 出力</span></div>
+                <div class="app-card"><span class="app-name">健康ログ</span><span class="app-desc">体重・血圧などの簡単記録</span></div>
+                <div class="app-card"><span class="app-name">フリック暗算</span><span class="app-desc">フリック入力でテンポよく暗算</span></div>
+                <div class="app-card"><span class="app-name">よみあげ電卓</span><span class="app-desc">入力を読み上げる電卓</span></div>
+                <div class="app-card"><span class="app-name">まなび電卓</span><span class="app-desc">音声入力対応の学習用電卓</span></div>
+                <div class="app-card"><span class="app-name">サブスクみえる化</span><span class="app-desc">月額サービスを一覧管理</span></div>
+                <div class="app-card"><span class="app-name">うちのこログ</span><span class="app-desc">ペットの記録を家族で共有</span></div>
+                <div class="app-card"><span class="app-name">おてつだいBank</span><span class="app-desc">子どものお手伝いポイント管理</span></div>
+                <div class="app-card"><span class="app-name">おくだけ勇者</span><span class="app-desc">放置系のミニ RPG</span></div>
+                <div class="app-card"><span class="app-name">食材管理</span><span class="app-desc">バーコード対応の在庫管理</span></div>
+                <div class="app-card"><span class="app-name">あいうえおかきかた</span><span class="app-desc">書き順アニメで文字練習</span></div>
+                <div class="app-card"><span class="app-name">ゴミ出しアラート</span><span class="app-desc">曜日と例外日に対応</span></div>
+                <div class="app-card"><span class="app-name">のんだっけ?</span><span class="app-desc">服薬の通知とログ</span></div>
+                <div class="app-card"><span class="app-name">転生診断</span><span class="app-desc">10問の性格分析 + 小説プロンプト</span></div>
+                <div class="app-card"><span class="app-name">はじめてごはん</span><span class="app-desc">離乳食の食材管理</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>事業者情報</h2>
+            <table class="info-table">
+                <tr>
+                    <th>屋号</th>
+                    <td>AkiAppsDev</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>〒812-0011 福岡県福岡市博多区博多駅前1丁目23番2号 ParkFront博多駅前1丁目5F-B</td>
+                </tr>
+                <tr>
+                    <th>事業内容</th>
+                    <td>Android アプリの企画・開発・運営</td>
+                </tr>
+                <tr>
+                    <th>連絡先</th>
+                    <td><a href="mailto:contact@akiappsdev.com">contact@akiappsdev.com</a></td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>お問い合わせ</h2>
+            <p>アプリに関するお問い合わせ、不具合のご報告、ビジネスに関するご連絡は以下のメールアドレスまでお願いいたします。</p>
+            <p><a href="mailto:contact@akiappsdev.com">contact@akiappsdev.com</a></p>
+        </section>
+
+        <footer>
+            <a href="https://privacy.akiappsdev.com/">プライバシーポリシー</a>
+            <span>·</span>
+            <a href="mailto:contact@akiappsdev.com">お問い合わせ</a>
+            <p style="margin-top:12px;">© AkiAppsDev</p>
+        </footer>
+    </div>
+</body>
+</html>
